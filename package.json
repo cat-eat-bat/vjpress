@@ -1,0 +1,20 @@
+{
+  "name": "v-press",
+  "version": "1.0.0",
+  "description": "v press docs",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "medium-zoom": "^1.1.0",
+    "vitepress": "^1.5.0",
+    "vue": "^3.5.13"
+  }
+}

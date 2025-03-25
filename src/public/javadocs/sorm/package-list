@@ -1,0 +1,12 @@
+cn.piesat.v.sorm
+cn.piesat.v.sorm.cqe
+cn.piesat.v.sorm.cqe.c
+cn.piesat.v.sorm.cqe.q
+cn.piesat.v.sorm.dao
+cn.piesat.v.sorm.dao.anno
+cn.piesat.v.sorm.dao.intercept
+cn.piesat.v.sorm.dialect
+cn.piesat.v.sorm.support
+cn.piesat.v.sorm.support.decrypt
+cn.piesat.v.sorm.support.gap
+cn.piesat.v.sorm.support.type

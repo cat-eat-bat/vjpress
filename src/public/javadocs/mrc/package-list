@@ -1,0 +1,6 @@
+cn.piesat.nj.cloud.mrc
+cn.piesat.nj.cloud.mrc.adapter
+cn.piesat.nj.cloud.mrc.adapter.internal
+cn.piesat.nj.cloud.mrc.autoconfigure
+cn.piesat.nj.cloud.mrc.interceptor
+cn.piesat.nj.cloud.mrc.support
