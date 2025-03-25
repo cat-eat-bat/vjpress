@@ -1,52 +1,26 @@
-name: Deploy VitePress site to Pages
+name: Deploy VitePress Site
 
 on:
   push:
-    branches: [main] # 设置触发工作流的分支
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: 'pages'
-  cancel-in-progress: true
+    branches: [main]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          fetch-depth: 0 # 需要获取完整的提交历史，以便 lastUpdated 选项正常工作
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18 # 或者你使用的 Node.js 版本
-          cache: 'npm'
-
+          node-version: 18
+      
       - name: Install dependencies
         run: npm install
-
-      - name: Build VitePress site
-        run: npm run build # 或者你的构建命令
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./dist #或者您构建后文件输出的目录
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
+      
+      - name: Build site
+        run: npm run docs:build
+      
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist
