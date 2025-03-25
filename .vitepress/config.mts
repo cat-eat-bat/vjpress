@@ -51,7 +51,7 @@ export default defineConfig({
       {
         text: "生态",
         items: [
-          { text: "前端资源", link: "https://nync.piesat.cn/vfe/" }
+          { text: "前端资源", link: "https://cat-eat-bat.github.io/vfe/" }
         ],
       },
       // {
