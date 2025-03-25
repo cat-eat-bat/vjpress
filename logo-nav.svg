@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- 背景圆形 -->
+  <circle cx="100" cy="100" r="90" fill="#f5f5f5" />
+  
+  <!-- V 字母 -->
+  <path d="M60 50 L100 130 L140 50" 
+        stroke="#2E8B57" 
+        stroke-width="12" 
+        stroke-linecap="round" 
+        fill="none"/>
+  
+  <!-- J 字母 -->
+  <path d="M100 90 L100 140 Q100 160 80 160" 
+        stroke="#2E8B57" 
+        stroke-width="12" 
+        stroke-linecap="round" 
+        fill="none"/>
+</svg>
