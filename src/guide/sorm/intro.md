@@ -64,7 +64,7 @@ outline: deep
 ### 2. 配置数据库连接信息
 在 `application.yml` 中配置数据库连接信息：
 
-```yaml 
+```yaml{16-27}
 server:  
   port: 8000
 spring:
@@ -80,18 +80,18 @@ swagger:
   description: 示例应用描述
   version: 1.0
 
-sorm:     // [!code focus]
-  data-sources: // [!code focus]
-    default:  // [!code focus]
-      url: jdbc:h2:~/Data/swap/demo;AUTO_SERVER=true;CASE_INSENSITIVE_IDENTIFIERS=TRUE // [!code focus]
-      username: sa  // [!code focus]
-      password:  // [!code focus]
-      driver-class-name: org.h2.Driver  // [!code focus]
-  settings:  // [!code focus] 
-    ddl-auto: create_if_not_exist  // [!code focus]
-    show-sql: true   // [!code focus]
-    entity-packages: cn.piesat.v.sample.sorm.domain.entity  // [!code focus]
-    dev-mode: true  // [!code focus]
+sorm:    
+  data-sources: 
+    default: 
+      url: jdbc:h2:~/Data/swap/demo;AUTO_SERVER=true;CASE_INSENSITIVE_IDENTIFIERS=TRUE 
+      username: sa  
+      password:  
+      driver-class-name: org.h2.Driver  
+  settings:   
+    ddl-auto: create_if_not_exist  
+    show-sql: true   
+    entity-packages: cn.piesat.v.sample.sorm.domain.entity  
+    dev-mode: true  
 
 ```
 
