@@ -473,6 +473,7 @@ public class MyOpenIdSlardarAuthenticateHandlerImpl extends AbstractSlardarAuthe
     }
 }
 ```
+
 此时前端仅需要在微信登录调用接口时，指定请求头 `X-Auth-Type:wx-openid`,该认证请求会通过自定义的认证逻辑来验证身份
 
 :::tip
