@@ -258,59 +258,6 @@ slardar:
 
 适用于自定义或微调认证逻辑的场景，比如考虑这样一个需求场景：某个应用需要支持用户名密码登录以及微信扫码登录两种方式，slardar 默认内置的是用户名密码方式，此时就可以通过实现此接口增加一种认证方式：
 
-```java
-@AutoService(SlardarAuthenticateHandler.class)
-public class MyOpenIdSlardarAuthenticateHandlerImpl extends AbstractSlardarAuthenticateHandler {
-    /**
-     * 子类实现
-     *
-     * @param authentication
-     * @return
-     */
-    @Override
-    protected SlardarAuthentication doAuthenticate0(SlardarAuthentication authentication) {
-        String openId = authentication.getAccountName();
-        SlardarUserDetailsServiceImpl detailsService = (SlardarUserDetailsServiceImpl) context.getBeanIfAvailable(UserDetailsService.class);
-        SlardarUserDetails userDetails = (SlardarUserDetails) detailsService.loadUserByOpenId(openId);
-        // 判断是否正确
-        authentication.setUserDetails(userDetails).setAuthenticated(true);
-        return authentication;
-    }
-
-    private static final String NAME = "wx-openid";
-
-    /**
-     * 认证处理类型 用于区分
-     *
-     * @return
-     */
-    @Override
-    public String type() {
-        return NAME;
-    }
-
-    /**
-     * 处理认证请求
-     *
-     * @param requestWrapper
-     * @return
-     * @throws AuthenticationServiceException
-     */
-    @Override
-    public SlardarAuthentication handleRequest(RequestWrapper requestWrapper) throws AuthenticationException {
-        String openid = requestWrapper.getRequestParams().get("openid");
-        if (StringUtil.isBlank(openid)) {
-            throw new AuthenticationServiceException("需要提供openid！");
-        }
-        return new SlardarAuthentication(openid, Constants.AUTH_TYPE_WX_APP, null);
-    }
-}
-```
-此时前端仅需要在微信扫码登录调用接口时，指定请求头 `X-Auth-Type:wx-openid`,该认证请求会通过自定义的认证逻辑来验证身份
-:::tip
-以上代码仅作为示例，实际需求可能复杂许多
-:::
-
 > slardar 提供了一个插件 `slardar-ext-ldap` 就是通过上述实现的支持`LDAP`认证
 
 ```java
@@ -464,3 +411,72 @@ public class MySlardarAuthenticatePreHandler implements SlardarAuthenticatePreHa
     }
 }
 ```
+
+## 其他
+### 多种登录方式
+
+适用场景：某个系统里，需要支持`pc`端的账号登录方式，同时也需要支持小程序端的微信账号登录方式，此时可以通过扩展 `AbstractSlardarAuthenticateHandler` 来实现自定义
+
+> 实现原理是： 通过认证请求头参数 `X-Auth-Type` 的不同值，寻找对应的实现类，从而实现不同方式的认证
+
+slardar 里默认提供了 两个实现： 
+- `OpenIdSlardarAuthenticateHandlerImpl`： open-id 实现，处理请求头 `X-Auth-Type : open-id` 的认证请求
+- `DefaultSlardarAuthenticateHandlerImpl`: 默认实现，处理所有默认的认证请求
+
+假如你要自定义一个实现，可以这么做：
+
+```java
+@AutoService(SlardarAuthenticateHandler.class)
+public class MyOpenIdSlardarAuthenticateHandlerImpl extends AbstractSlardarAuthenticateHandler {
+    /**
+     * 子类实现
+     *
+     * @param authentication
+     * @return
+     */
+    @Override
+    protected SlardarAuthentication doAuthenticate0(SlardarAuthentication authentication) {
+        String openId = authentication.getAccountName();
+        SlardarUserDetailsServiceImpl detailsService = (SlardarUserDetailsServiceImpl) context.getBeanIfAvailable(UserDetailsService.class);
+        SlardarUserDetails userDetails = (SlardarUserDetails) detailsService.loadUserByOpenId(openId);
+        // 判断是否正确
+        authentication.setUserDetails(userDetails).setAuthenticated(true);
+        return authentication;
+    }
+
+    private static final String NAME = "wx-openid";
+
+    /**
+     * 认证处理类型 用于区分
+     *
+     * @return
+     */
+    @Override
+    public String type() {
+        return NAME;
+    }
+
+    /**
+     * 处理认证请求
+     *
+     * @param requestWrapper
+     * @return
+     * @throws AuthenticationServiceException
+     */
+    @Override
+    public SlardarAuthentication handleRequest(RequestWrapper requestWrapper) throws AuthenticationException {
+        String openid = requestWrapper.getRequestParams().get("openid");
+        if (StringUtil.isBlank(openid)) {
+            throw new AuthenticationServiceException("需要提供openid！");
+        }
+        return new SlardarAuthentication(openid, Constants.AUTH_TYPE_WX_APP, null);
+    }
+}
+```
+此时前端仅需要在微信登录调用接口时，指定请求头 `X-Auth-Type:wx-openid`,该认证请求会通过自定义的认证逻辑来验证身份
+
+:::tip
+以上代码仅作为示例，实际需求可能复杂许多
+:::
+
+
