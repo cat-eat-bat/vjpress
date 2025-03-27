@@ -24,5 +24,10 @@ docker run 命令是 Docker 中最核心的命令之一，用于创建并运行�
 - `-e`: 设置环境变量, 格式为 变量名=变量值，例如 -e MYSQL_ROOT_PASSWORD=secret
 - `--cpus`: 限制容器使用的 CPU 数量
 - `--memory`: 限制容器使用的内存量
+- `--restart`: 用于指定容器的重启策略，
+    - no: 默认值，即不会重启
+    - on-failure[:max-retries] ：仅当容器以非零退出代码退出（表示错误）时，才会重启容器，可以选择指定最大重启尝试次数（例如，on-failure:5）
+    - always：无论退出代码如何，容器都将始终重启
+    - unless-stopped：除非用户明确停止容器，否则容器将重启
 
 <PostNav />
