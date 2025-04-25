@@ -9,6 +9,62 @@ outline: deep
 
 <PostMeta />
 
+## 介绍
+
+[Apache Sedona](https://sedona.apache.org/latest/) 是一种用于处理大规模空间数据的集群计算系统，通过提供一系列开箱即用的分布式空间数据集和空间 SQL，扩展了现有的集群计算系统，如 Apache Spark、Apache Flink 和 Snowflake，这些系统可以高效地在机器间加载、处理和分析大规模空间数据。
+
+主要架构如下：
+
+![](https://sedona.apache.org/latest/image/sedona-ecosystem.png)
+
+
+Sedona 目前支持三个分布式平台： `Spark` `Flink` `Snowflake`
+
+> 本文以 `spark` 平台为例
+
+
+## 安装
+
+### 基础环境
+- spark
+- java
+- maven
+
+#### spark
+
+采用单机伪集群模式，本机作为`master`角色，同时作为一个 `worker` 角色，需要修改环境变量：
+
+```shell
+vim conf/spark-env.sh
+```
+
+添加以下变量值：
+
+```
+export SPARK_MASTER_HOST=localhost
+export SPARK_MASTER_PORT=7077
+export SPARK_MASTER_WEBUI_PORT=8088
+```
+分别启动 master 和 worker:
+
+```shell
+sbin/start-master.sh
+
+sbin/start-worker.sh spark://localhost:7077 -c 4 -m 1G
+```
+> 这里 `worker` 指定了 cores 为 4 内存为 1GB
+
+可以访问 `http://localhost:8088/` 查看 spark web 页面
+
+#### 添加 sedona jars
+
+将对应版本的jar包拷贝到 `${SPARK_HOME}/jars`
+
+`sedona-spark-shaded-3.5_2.12-1.7.1.jar` `geotools-wrapper-1.7.1-28.5.jar`
+
+
+## 使用
+
 
 
 <PostNav />
