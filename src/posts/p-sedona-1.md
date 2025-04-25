@@ -125,7 +125,7 @@ sbin/start-worker.sh spark://localhost:7077 -c 4 -m 1G
 
 ### 测试代码
 
-```
+```java
    public static void main(String[] args) {
         SparkSession config = SedonaContext.builder()
                 .master("spark://localhost:7077") // 本机集群
