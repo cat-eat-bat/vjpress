@@ -25,7 +25,7 @@ outline: deep
 <dependency>
     <groupId>cn.piesat.v</groupId>
     <artifactId>slardar-starter</artifactId>
-    <version>1.5.0-SNAPSHOT</version>
+    <version>1.6.0-SNAPSHOT</version>
 </dependency>
 ```
 
