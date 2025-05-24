@@ -19,8 +19,9 @@ outline: deep
 
 ## 版本更新
 
-最新版本: `1.6.0-SNAPSHOT`, 版本更新说明:
+最新版本: `1.6.0-SNAPSHOT`
 
+### 1.6.0-SNAPSHOT
 - 移除了 `hutool` 的相关依赖，改为内部实现，可以避免和应用包内的 hutool 依赖冲突
 - 重写了 `keystore` 模块，支持多种存储方式(memory/mapdb/mvstore/redis), 在轻量的单体服务中，可以不必依赖redis，采用内部存储即可
 - 修复一些 bug
