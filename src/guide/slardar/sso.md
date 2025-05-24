@@ -23,7 +23,7 @@ outline: deep
 <dependency>
     <groupId>cn.piesat.v</groupId>
     <artifactId>slardar-sso-server-starter</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>1.2.0-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -42,7 +42,7 @@ slardar:
 <dependency>
     <groupId>cn.piesat.v</groupId>
     <artifactId>slardar-sso-client-starter</artifactId>
-     <version>1.1.1-SNAPSHOT</version>
+     <version>1.2.0-SNAPSHOT</version>
 </dependency>
 ```
 修改配置，指定 sso 服务端地址:
