@@ -7,7 +7,6 @@ outline: deep
 **Slardar** 
 基于 Spring Securtiy 框架封装定义了 4A (Authentication、Authorization、Account、Audit) 相关的接口和逻辑流程，应用服务可以快速具有4A等能力。
 
-
 ## 特性
 
 - 基于 spring security 实现认证和权限控制
@@ -17,6 +16,14 @@ outline: deep
 - 支持 LDAP 等用户联合认证体系
 - 支持集成方实现SPI进行自定义扩展
 - ...
+
+## 版本更新
+
+最新版本: `1.6.0-SNAPSHOT`, 版本更新说明:
+
+- 移除了 `hutool` 的相关依赖，改为内部实现，可以避免和应用包内的 hutool 依赖冲突
+- 重写了 `keystore` 模块，支持多种存储方式(memory/mapdb/mvstore/redis), 在轻量的单体服务中，可以不必依赖redis，采用内部存储即可
+- 修复一些 bug
 
 ## 快速使用
 ### 引入依赖
