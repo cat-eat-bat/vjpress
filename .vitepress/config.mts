@@ -1,6 +1,6 @@
 /*
  * @Author: Alex
- * @LastEditors: Alex yxfacw@163.com
+ * @LastEditors: yxfacw@163.com
  * @Date: 2024-11-20
  * @Description:
  */
@@ -38,15 +38,19 @@ export default defineConfig({
         activeMatch: "/config/",
       },
       {
-        text: "文章",
-        link: "/posts",
-        activeMatch: "/posts/",
-      },
-     // javadoc
-      {
         text: "API",
         link: "/apidoc",
         activeMatch: "/apidoc/",
+      },
+      {
+        text: "Adminpress",
+        link: "/aps",
+        activeMatch: "/aps/",
+      },
+      {
+        text: "文章",
+        link: "/posts",
+        activeMatch: "/posts/",
       },
       {
         text: "生态",
@@ -126,7 +130,7 @@ export default defineConfig({
       "/config/": [
         {
           text: "配置参考",
-          link: "/config/intro",
+          link: "/config/index",
         },
         {
           text: "Starter",
