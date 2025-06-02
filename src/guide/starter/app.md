@@ -119,14 +119,15 @@ public class Person implements Serializable {
 ```
 ## 时间字段格式化
 
-对于 jdk8 的时间字段，可在配置文件中自定义返回的格式
+采用 jackson 序列化数据时，默认对于 jdk8 的`Local`时间类型，不能很好的展示，现在可在配置文件中自定义返回的格式（扩展了  `spring.jackson` 配置项）
 
 ```yaml
 #  自定义 jackson 返回的时间字段的格式
-jackson:
-  date-time-format: yyyy-MM-dd HH:mm:ss.SSS
-  local-date-format: yyyy年MM月dd
-  local-time-format: HH:mm
+spring:
+  jackson:
+    custom:
+      local-date-format: yy年MM月dd
+      local-time-format: HH:mm
 ```
 
 好了，本章节就到这里，如果需要更多业务功能特性，可完善此文档添加.
