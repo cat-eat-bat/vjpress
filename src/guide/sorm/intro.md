@@ -7,6 +7,14 @@ outline: deep
 **SORM** 是一个轻量、简单易用的关系型数据库 ORM。当你厌烦了 Mybatis(plus) 的 xml 写法以及 JPA 的复杂配置时，你可以试试 SORM。
 
 
+## 版本更新
+
+最新版本: `1.6.0-SNAPSHOT`
+
+### 1.6.0-SNAPSHOT
+- 增加对`duckdb`数据库的支持
+- 移除了 `activerecord` 依赖，修改为内部实现
+- 修复一些 bug
 
 ## 特性
 
