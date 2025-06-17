@@ -19,6 +19,8 @@ next: '应用Starter | 基础应用'
 | mrc                  |  rest 客户端组件    | 1.1.2-SNAPSHOT    |
 | ring-timer           |  定时器组件(基于时间轮)    | 1.1.0-SNAPSHOT    |
 | event-manager        |  异步事件管理组件   | 1.1.0-SNAPSHOT    |
-| slardar-starter        |  权限认证模块组件   | 1.5.0-SNAPSHOT    |
-| slardar-sso-client-starter        |  sso单点登录客户端组件   | 1.1.1-SNAPSHOT    |
-| slardar-sso-server-starter        |  sso单点登录服务端组件   | 1.1.1-SNAPSHOT    |
+| slardar-starter        |  权限认证模块组件   | 1.6.0-SNAPSHOT    |
+| slardar-sso-client-starter        |  sso单点登录客户端组件   | 1.2.0-SNAPSHOT    |
+| slardar-sso-server-starter        |  sso单点登录服务端组件   | 1.2.0-SNAPSHOT    |
+
+> spring-boot: 2.7.18
