@@ -57,7 +57,7 @@ outline: deep
        <dependency>
             <groupId>cn.piesat.v</groupId>
             <artifactId>sorm-spring-boot-starter</artifactId>
-            <version>1.5.2-SNAPSHOT</version>
+            <version>1.6.0-SNAPSHOT</version>
         </dependency>
         <!-- h2 数据库驱动 -->
        
