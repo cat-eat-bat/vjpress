@@ -19,7 +19,7 @@ sorm:
       driver-class-name: org.h2.Driver
     # pg 数据源   // [!code ++]
     postgis:             // [!code ++]                                                     
-      url: jdbc:postgresql://1.119.169.94:10039/postgres?currentSchema=public // [!code ++]
+      url: jdbc:postgresql://1.119.169.94:10039/postgres?currentSchema=public  // [!code ++]
       username: postgres  // [!code ++]
       password: xxxxxxxxx  // [!code ++]
       driver-class-name: org.postgresql.Driver  // [!code ++]
