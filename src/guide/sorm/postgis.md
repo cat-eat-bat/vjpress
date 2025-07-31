@@ -12,7 +12,7 @@ sorm 对 postgis 做了一定的封装支持，使其在业务中更便捷使用
  <dependency>
      <groupId>cn.piesat.v</groupId>
      <artifactId>sorm-postgis</artifactId>
-     <version>1.5.2-SNAPSHOT</version>
+     <version>1.6.0-SNAPSHOT</version>
  </dependency>
 ```
 
