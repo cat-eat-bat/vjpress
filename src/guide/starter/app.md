@@ -10,7 +10,7 @@ outline: deep
 
 ### 1.3.0-SNAPSHOT
 
-- 接口文档升级到 openapi3 规范，引入了 springdoc 等 配置项目有所改变
+- 接口文档升级到 openapi3 规范，引入了 springdoc 等 配置项目有所改变 代码中的注解需要切换到 swagger v3
 
 ## 接口在线文档
 
@@ -77,15 +77,6 @@ springdoc:
 
 > 如果是只想开启某些url 或 package 只需要把 `exclude` 换成 `match`
 
- 针对特定url开启Authorization认证：
-
- ```yaml
-swagger:
-    authorization:
-      auth-regex: '.*/(admin)/.*' // [!code highlight]
- ```
-
- > 开启后，只会针对 `/admin/**` 开头的接口文档中提示需要认证请求头
 
 ## 接口限流
 
@@ -150,5 +141,22 @@ spring:
       local-date-format: yy年MM月dd
       local-time-format: HH:mm
 ```
+
+## 附
+
+### swagger v3注解变化说明
+
+| 功能维度                  | Swagger 2 注解（已过时）                                                             | Swagger 3 注解（OpenAPI 3）                                       | 迁移备注                                              |
+| --------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------- |
+| **控制器/分组**            | `@Api(tags = "xxx")`                                                          | `@Tag(name = "xxx", description = "xxx")`                     | 可重复打标签；一个控制器支持多个 `@Tag`                           |
+| **接口方法**              | `@ApiOperation(value = "xxx")`                                                | `@Operation(summary = "xxx", description = "xxx")`            | 新加 `operationId`、`deprecated`、`security` 等属性      |
+| **路径参数/查询参数**         | `@ApiParam(value = "xxx", required = true)`                                   | `@Parameter(description = "xxx", required = true)`            | 包路径也换了：`io.swagger.v3.oas.annotations.*`          |
+| **隐式参数**（非 Spring 注解） | `@ApiImplicitParam`/`@ApiImplicitParams`                                      | 直接 `@Parameter` 放在 `@Operation` 内                             | 3.0 不再区分“隐式”                                      |
+| **请求/响应体模型**          | `@ApiModel(description = "xxx")` 类级别<br>`@ApiModelProperty(notes = "xxx")` 字段 | `@Schema(description = "xxx")` 类＋字段通用                         | 一个注解搞定，支持 `example`、`requiredMode`、`accessMode` 等 |
+| **响应码描述**             | `@ApiResponses({@ApiResponse(code = 200, message = "xxx")})`                  | `@ApiResponse(responseCode = "200", description = "xxx")`     | 字段名从 `code→responseCode`，`message→description`    |
+| **忽略某接口**             | 在 `Docket` 里 `apis()/paths()` 过滤                                              | 同上，或直接在方法写 `@Hidden`                                          | 更细粒度                                              |
+| **安全/授权**             | `@ApiOperation(authorizations = {@Authorization(value = "jwt")})`             | `@Operation(security = {@SecurityRequirement(name = "jwt")})` | 先通过 `OpenAPI` Bean 声明 SecurityScheme，再引用          |
+| **服务器地址**             | 通过 `Docket.host()` 统一定义                                                       | `@Server(url = "https://api.xxx.com", description = "生产")`    | 可写多个 `@Server`，支持路径变量                             |
+
 
 好了，本章节就到这里，如果需要更多业务功能特性，可完善此文档添加.
