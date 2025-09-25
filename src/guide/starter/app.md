@@ -137,9 +137,11 @@ public class Person implements Serializable {
 #  自定义 jackson 返回的时间字段的格式
 spring:
   jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
     custom:
-      local-date-format: yy年MM月dd
-      local-time-format: HH:mm
+      local-date-format: YY年MM月dd日
+      local-time-format: HH:mm:ss
 ```
 
 ## 附
