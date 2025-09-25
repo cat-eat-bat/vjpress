@@ -20,47 +20,59 @@ outline: deep
 
 ### 如何禁用
 
-```yaml{2}
-swagger:
-  enabled: false
+```yaml{3,5}
+springdoc:
+  swagger-ui:
+    enabled: false
+  api-docs:
+    enabled: false
 ```
 ::: info
-默认是打开的，无需设置 `enabled: true`
+默认是启用的，无需设置
 :::
 
 ### 如何添加安全认证
 
-```yaml{3-6}
-knife4j:
-  enable: true
+```yaml{3-5}
+openapi:
   basic:
-    enable: true
+    enabled: true
     username: demo
     password: Demo@1234
 ```
 
 ::: tip
-出于安全考虑，推荐所有服务都开启此配置
+出于安全考虑，推荐所有线上服务都开启此配置
 :::
 
 ### 定制展示信息
 
 ```yaml
-swagger:
-  title: Sample Api
-  description: "**示例接口描述**"
-  version: v1.0
-  contact-name: alex
-  license: GPL-3.0
-  terms-of-service-url: https://stackoverflow.com/
+openapi:
+  info:
+    title: Sample Api
+    description: "**示例接口描述**"
+    version: v1.0
+    contact:
+      name: alex
+    license: GPL-3.0
+    terms-of-service-url: https://stackoverflow.com/
 ```
 
  排除特定 url：
 
  ```yaml
-swagger:
-  exclude-path: /test/**,/demo/v1/**
+springdoc:
+  paths-to-exclude: /test/**,/demo/v1/**
  ```
+
+排除特定包：
+```yaml
+springdoc:
+  packages-to-exclude: com.example.internal
+```
+
+> 如果是只想开启某些url 或 package 只需要把 `exclude` 换成 `match`
 
  针对特定url开启Authorization认证：
 
