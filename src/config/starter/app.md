@@ -4,7 +4,7 @@ outline: deep
 
 # app-spring-boot-starter
 
-## Swagger
+## Openapi & doc
 
 ```yaml
 # openapi(包含 knife4j 相关配置)
