@@ -83,8 +83,8 @@ export default defineConfig({
           text: "应用 Starter",
           collapsed: false,
           items: [
-            { text: "基础应用", link: "/guide/starter/app" },
-            { text: "使用 undertow", link: "/guide/starter/undertow" },
+            { text: "web starter", link: "/guide/starter/app" },
+            { text: "undertow", link: "/guide/starter/undertow" },
             { text: "适配东方通", link: "/guide/starter/tongweb" },
             // { text: "微服务应用", link: "/guide/starter/cloud" },
             { text: "其他框架", link: "/guide/starter/next" },
