@@ -156,7 +156,6 @@ spring:
 | **响应码描述**             | `@ApiResponses({@ApiResponse(code = 200, message = "xxx")})`                  | `@ApiResponse(responseCode = "200", description = "xxx")`     | 字段名从 `code→responseCode`，`message→description`    |
 | **忽略某接口**             | 在 `Docket` 里 `apis()/paths()` 过滤                                              | 同上，或直接在方法写 `@Hidden`                                          | 更细粒度                                              |
 | **安全/授权**             | `@ApiOperation(authorizations = {@Authorization(value = "jwt")})`             | `@Operation(security = {@SecurityRequirement(name = "jwt")})` | 先通过 `OpenAPI` Bean 声明 SecurityScheme，再引用          |
-| **服务器地址**             | 通过 `Docket.host()` 统一定义                                                       | `@Server(url = "https://api.xxx.com", description = "生产")`    | 可写多个 `@Server`，支持路径变量                             |
 
 
 好了，本章节就到这里，如果需要更多业务功能特性，可完善此文档添加.
