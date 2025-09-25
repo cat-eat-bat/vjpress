@@ -7,22 +7,34 @@ outline: deep
 ## Swagger
 
 ```yaml
-swagger:
-  enabled: false   # 默认开启
-  title: Sample Api
-  description: "**示例接口描述**"
-  version: v1.0
-  contact-name: alex
-  license: GPL-3.0
-  terms-of-service-url: https://stackoverflow.com/
-  authorization:
-    auth-regex: '.*/(admin)/.*'  # 配置哪些请求需要验证权限
-
-knife4j:
-  basic:   # 为 doc.html 增加basic auth
-    enable: true
+# openapi(包含 knife4j 相关配置)
+openapi:
+  info:
+    title: 'Sample Api'
+    description: '**示例接口描述** 更多详细用法请参考具体配置项'
+    terms-of-service: '服务条款：1.2.3.4... https://stackoverflow.com/'
+    contact:
+      name: 'Alex'
+    version: '1.0.0'
+  setting:
+    language: zh_cn
+    enable-version: true
+  basic:
+    enabled: true
     username: demo
-    password: xxxx
+    password: Demo@1234
+  cors: true
+
+# springdoc-openapi项目配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  paths-to-exclude: /mrc/** # 排除 也可以对单个接口采用 hidden = true
+  packages-to-exclude: com.example.internal
 ```
 
 
@@ -30,8 +42,11 @@ knife4j:
 
 ```yaml
 #  自定义 jackson 返回的时间字段的格式
-jackson:
-  date-time-format: yyyy-MM-dd HH:mm:ss.SSS
-  local-date-format: yyyy年MM月dd
-  local-time-format: HH:mm
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    custom:
+      local-date-format: YY年MM月dd日
+      local-time-format: HH:mm:ss
 ```
