@@ -89,7 +89,7 @@ public class PersonRepository {
 @RespAdvice
 @RestController
 @RequestMapping("/demo/api/v1")
-@Api(tags = "测试api")
+@Tag(name = "测试api")
 public class DemoApiController {
 
     private final PersonRepository personRepository;
@@ -98,20 +98,20 @@ public class DemoApiController {
         this.personRepository = personRepository;
     }
 
-    @ApiOperation("演示get请求 返回 字符串")
+    @Operation(summary = "演示get请求 返回 字符串")
     @GetMapping("/name/{id}")
     public String getName(@PathVariable String id) {
         return "User".concat(id);
     }
 
-    @ApiOperation("演示请求限流")
+    @Operation(summary = "演示请求限流")
     @GetMapping(value = "/buy/ticket", produces = MediaType.APPLICATION_JSON_VALUE)
     @GuavaRateLimiter(2) // [!code highlight]
     public String ticket() {
         return "Your got it!";
     }
 
-    @ApiOperation("演示get请求 返回 POJO")
+    @Operation(summary = "演示get请求 返回 POJO")
     @GetMapping("/persons/{id}")
     public Person getPerson(@PathVariable String id) {
         try {
@@ -121,7 +121,7 @@ public class DemoApiController {
         }
     }
 
-    @ApiOperation("演示异常返回")
+    @Operation(summary = "演示异常返回")
     @GetMapping("/ex")
     public void ex() {
         throw new WebApiException("error..");
