@@ -59,12 +59,15 @@ openapi:
     terms-of-service-url: https://stackoverflow.com/
 ```
 
- 排除特定 url：
+ ### 排除指定接口或包
+
+排除指定url：
 
  ```yaml
 springdoc:
   paths-to-exclude: /test/**,/demo/v1/**
  ```
+> 也可以在代码中使用注解隐藏某个接口 `@Operation(summary = "演示xxx", hidden = true)`
 
 排除特定包：
 ```yaml
