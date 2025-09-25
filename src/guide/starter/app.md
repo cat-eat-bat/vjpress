@@ -6,6 +6,12 @@ outline: deep
 
 用于开发web应用的 springboot starter，在 [快速开始](../quickstart) 中已经使用过它，下面来详细介绍它的一些特性和用法.
 
+## 版本更新
+
+### 1.3.0-SNAPSHOT
+
+- 接口文档升级到 openapi3 规范，引入了 springdoc 等 配置项目有所改变
+
 ## 接口在线文档
 
 组件内引入了开源的 `knife4j` 在线文档组件，所以服务启动后，可通过 `ip:port/doc.html` 访问在线文档，大概长这样：
