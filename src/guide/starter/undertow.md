@@ -18,7 +18,7 @@ Spring Boot 中使用 Undertow 的场景
     <dependency>
         <groupId>cn.piesat.v</groupId>
         <artifactId>app-undertow-starter</artifactId>
-        <version>1.1.0-SNAPSHOT</version>
+        <version>1.3.0-SNAPSHOT</version>
     </dependency>
 ```
 
