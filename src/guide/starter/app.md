@@ -10,7 +10,7 @@ outline: deep
 
 ### 1.3.0-SNAPSHOT
 
-- 接口文档升级到 openapi3 规范，引入了 springdoc 等 配置项目有所改变 代码中的注解需要切换到 swagger v3
+- 接口文档升级到 openapi3 规范，引入了 springdoc， 配置项有所改变，代码中的`swagger`注解需要切换到 `v3` 规范
 
 ## 接口在线文档
 
