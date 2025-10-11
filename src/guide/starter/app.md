@@ -169,7 +169,7 @@ application:
 
 提供了一个注解 `@ErrorAdvice` 用于标记自定义的异常类，用法：
 
-```
+```java
 @ErrorAdvice(code = 10001, message = "自定义异常")
 public class MyException extends RuntimeException {
 
