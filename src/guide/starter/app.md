@@ -165,6 +165,24 @@ application:
       fail-code: 500 # 默认 9999
 ```
 
+### 自定义异常
+
+提供了一个注解 `@ErrorAdvice` 用于标记自定义的异常类，用法：
+
+```
+@ErrorAdvice(code = 10001, message = "自定义异常")
+public class MyException extends RuntimeException {
+
+    public MyException(String msg) {
+        super(msg);
+    }
+
+    public MyException() {
+    }
+}
+```
+在service 或controller 中抛出该异常，则会显示注解的内容
+
 ## 时间字段格式化
 
 采用 jackson 序列化数据时，默认对于 jdk8 的`Local`时间类型，不能很好的展示，现在可在配置文件中自定义返回的格式（扩展了  `spring.jackson` 配置项）
