@@ -149,6 +149,22 @@ public class DemoApiController {
 }
 ```
 
+### 排除全局响应
+
+在需要排除的接口方法上添加注解 `@RespAdviceExclude` 即可忽略该方法的返回结果
+
+### 自定义成功和失败响应
+
+支持对成功和失败响应的code 以及 message 内容进行定制，使用配置实现：
+
+```yaml
+application:
+    resp:
+      success-code: 200   # 默认 0
+      success-msg: 'ok'
+      fail-code: 500 # 默认 9999
+```
+
 ## 时间字段格式化
 
 采用 jackson 序列化数据时，默认对于 jdk8 的`Local`时间类型，不能很好的展示，现在可在配置文件中自定义返回的格式（扩展了  `spring.jackson` 配置项）
