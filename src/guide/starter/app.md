@@ -135,6 +135,20 @@ public class Person implements Serializable {
     "address": "江苏省xxxxxx区安德xxxxxx", // [!code highlight]
   }
 ```
+
+## 接口全局响应
+
+内部对controller接口响应以及异常做了统一封装，使用时在相应的controller类上添加注解 `@EnableRespAdvice` 用于开启advice功能：
+
+```java
+@EnableRespAdvice
+@RestController
+@RequestMapping("/demo/api/v1")
+@Tag(name = "测试api")
+public class DemoApiController {
+}
+```
+
 ## 时间字段格式化
 
 采用 jackson 序列化数据时，默认对于 jdk8 的`Local`时间类型，不能很好的展示，现在可在配置文件中自定义返回的格式（扩展了  `spring.jackson` 配置项）
