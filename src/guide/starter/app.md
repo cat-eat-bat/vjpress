@@ -8,6 +8,10 @@ outline: deep
 
 ## 版本更新
 
+### 1.4.0-SNAPSHOT
+
+- 完善了Response Advice 部分，移除了 Resp 类，增加功能：可定制响应码、自定义异常等
+
 ### 1.3.0-SNAPSHOT
 
 - 接口文档升级到 openapi3 规范，引入了 springdoc， 配置项有所改变，代码中的`swagger`注解需要切换到 `v3` 规范
@@ -34,11 +38,12 @@ springdoc:
 ### 如何添加安全认证
 
 ```yaml{3-5}
-openapi:
-  basic:
-    enabled: true
-    username: demo
-    password: Demo@1234
+application:
+  openapi:
+    basic:
+      enabled: true
+      username: demo
+      password: Demo@1234
 ```
 
 ::: tip
@@ -48,15 +53,16 @@ openapi:
 ### 定制展示信息
 
 ```yaml
-openapi:
-  info:
-    title: Sample Api
-    description: "**示例接口描述**"
-    version: v1.0
-    contact:
-      name: alex
-    license: GPL-3.0
-    terms-of-service-url: https://stackoverflow.com/
+application:
+  openapi:
+    info:
+      title: Sample Api
+      description: "**示例接口描述**"
+      version: v1.0
+      contact:
+        name: alex
+      license: GPL-3.0
+      terms-of-service-url: https://stackoverflow.com/
 ```
 
  ### 排除指定接口或包
@@ -135,11 +141,8 @@ public class Person implements Serializable {
 
 ```yaml
 #  自定义 jackson 返回的时间字段的格式
-spring:
-  jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
-    time-zone: GMT+8
-    custom:
+application:
+    jackson:
       local-date-format: YY年MM月dd日
       local-time-format: HH:mm:ss
 ```
