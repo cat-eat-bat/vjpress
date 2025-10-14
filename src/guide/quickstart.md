@@ -13,9 +13,9 @@ outline: deep
 
 ```xml
     <dependency>
-        <groupId>cn.piesat.v</groupId>
+        <groupId>org.winterfell</groupId>
         <artifactId>app-spring-boot-starter</artifactId>
-        <version>1.3.0-SNAPSHOT</version>
+        <version>1.4.0-SNAPSHOT</version>
     </dependency>
 ```
 
