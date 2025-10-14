@@ -184,6 +184,19 @@ public class MyException extends RuntimeException {
 ```
 在service 或controller 中抛出该异常，则会显示注解的内容
 
+## 方法调用日志记录
+使用切面实现了任意方法调用的参数、返回值、耗时等的记录，无侵入方式实现，只需要添加注解即可：
+
+```java
+  @GetMapping("/greeting/{name}")
+  @MethodLogger(module = "MY")
+  public Response<String> getName(@PathVariable String name) {
+     return responseFactory.createSuccess("hello , ".concat(String.valueOf(name.charAt(0)).toUpperCase()).concat(name.substring(1)));
+  }
+```
+
+> `module` 用于标注该方法所属的模块 便于日志检索分析
+
 ## 时间字段格式化
 
 采用 jackson 序列化数据时，默认对于 jdk8 的`Local`时间类型，不能很好的展示，现在可在配置文件中自定义返回的格式（扩展了  `spring.jackson` 配置项）
