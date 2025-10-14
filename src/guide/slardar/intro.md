@@ -31,7 +31,7 @@ outline: deep
 
 ```xml
 <dependency>
-    <groupId>cn.piesat.v</groupId>
+    <groupId>corg.winterfell</groupId>
     <artifactId>slardar-starter</artifactId>
     <version>1.6.0-SNAPSHOT</version>
 </dependency>
