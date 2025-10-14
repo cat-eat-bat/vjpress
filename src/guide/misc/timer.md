@@ -9,7 +9,7 @@ outline: deep
 ## 引入
 ```xml
 <dependency> 
-    <groupId>cn.piesat.v</groupId>
+    <groupId>org.winterfell</groupId>
     <artifactId>ring-timer</artifactId>
     <version>1.1.0-SNAPSHOT</version>
 </dependency>
