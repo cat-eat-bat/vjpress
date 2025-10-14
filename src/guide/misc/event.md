@@ -18,7 +18,7 @@ event-manager: 利用 `Disruptor` 实现的高性能的异步事件管理器。
 ### 引入依赖
 ```xml
 <dependency> 
-    <groupId>cn.piesat.v</groupId>
+    <groupId>org.winterfell</groupId>
     <artifactId>event-manager</artifactId>
     <version>1.1.0-SNAPSHOT</version>
 </dependency>
