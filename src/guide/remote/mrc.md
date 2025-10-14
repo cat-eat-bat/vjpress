@@ -19,7 +19,7 @@ outline: deep
 
 ```xml
     <dependency>
-        <groupId>cn.piesat.v</groupId>
+        <groupId>org.winterfell</groupId>
         <artifactId>mrc</artifactId>
         <version>1.1.2-SNAPSHOT</version>
     </dependency>
