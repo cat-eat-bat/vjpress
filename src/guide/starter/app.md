@@ -11,6 +11,7 @@ outline: deep
 ### 1.4.0-SNAPSHOT
 
 - 完善了Response Advice 部分，移除了 Resp 类，增加功能：可定制响应码、自定义异常等
+- 增加方法记录切面，可以对方法的名称、参数、返回值、耗时进行日志打印输出
 
 ### 1.3.0-SNAPSHOT
 
