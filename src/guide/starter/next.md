@@ -30,7 +30,7 @@ Springboot 3.x 可以打包成 native-image，可以减少启动时间与资源�
 
 ```xml
 <dependency>
-    <groupId>cn.piesat.v</groupId>
+    <groupId>org.winterfell</groupId>
     <artifactId>app-vertx-starter</artifactId>
     <version>1.1.0-SNAPSHOT</version>
 </dependency>
@@ -219,7 +219,7 @@ Javalin适合以下场景使用:
 #### 1. 引入starter
 ```xml
 <dependency>
-    <groupId>cn.piesat.v</groupId>
+    <groupId>org.winterfell</groupId>
     <artifactId>app-javalin-starter</artifactId>
     <version>1.1.0-SNAPSHOT</version>
 </dependency>
