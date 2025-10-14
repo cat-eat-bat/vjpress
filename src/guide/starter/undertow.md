@@ -16,9 +16,9 @@ Spring Boot 中使用 Undertow 的场景
 
 ```xml{3}
     <dependency>
-        <groupId>cn.piesat.v</groupId>
+        <groupId>org.winterfell</groupId>
         <artifactId>app-undertow-starter</artifactId>
-        <version>1.3.0-SNAPSHOT</version>
+        <version>1.4.0-SNAPSHOT</version>
     </dependency>
 ```
 
