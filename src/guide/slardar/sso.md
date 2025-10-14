@@ -21,7 +21,7 @@ outline: deep
 
 ```xml
 <dependency>
-    <groupId>cn.piesat.v</groupId>
+    <groupId>org.winterfell</groupId>
     <artifactId>slardar-sso-server-starter</artifactId>
     <version>1.2.0-SNAPSHOT</version>
 </dependency>
