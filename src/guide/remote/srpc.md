@@ -20,7 +20,7 @@ outline: deep
 
 ```xml
     <dependency>
-        <groupId>cn.piesat.v</groupId>
+        <groupId>org.winterfell</groupId>
         <artifactId>srpc</artifactId>
         <version>1.1.0-SNAPSHOT</version>
     </dependency>
@@ -66,7 +66,7 @@ public class PersonDTO implements Serializable {
 
 ```xml
    <dependency>
-       <groupId>cn.piesat.v</groupId>
+       <groupId>org.winterfell</groupId>
        <artifactId>srpc-sample-api</artifactId>
        <version>1.1.0-SNAPSHOT</version>
    </dependency>
@@ -160,7 +160,7 @@ springboot中使用会更加方便，引入下面的依赖:
 
 ```xml
  <dependency>
-     <groupId>cn.piesat.v</groupId>
+     <groupId>org.winterfell</groupId>
      <artifactId>srpc-spring-boot-starter</artifactId>
      <version>1.1.0-SNAPSHOT</version>
  </dependency>
