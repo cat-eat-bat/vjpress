@@ -10,9 +10,9 @@ sorm 对 postgis 做了一定的封装支持，使其在业务中更便捷使用
 
 ```xml
  <dependency>
-     <groupId>cn.piesat.v</groupId>
+     <groupId>org.winterfell</groupId>
      <artifactId>sorm-postgis</artifactId>
-     <version>1.6.0-SNAPSHOT</version>
+     <version>1.7.0-SNAPSHOT</version>
  </dependency>
 ```
 
