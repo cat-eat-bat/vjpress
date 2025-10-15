@@ -49,17 +49,17 @@ outline: deep
 
 ```xml
        <dependency>
-            <groupId>cn.piesat.v</groupId>
+            <groupId>org.winterfell</groupId>
             <artifactId>app-spring-boot-starter</artifactId>
-            <version>1.1.0-SNAPSHOT</version>
+            <version>1.4.0-SNAPSHOT</version>
         </dependency>
 
        <dependency>
-            <groupId>cn.piesat.v</groupId>
+            <groupId>org.winterfell</groupId>
             <artifactId>sorm-spring-boot-starter</artifactId>
-            <version>1.6.0-SNAPSHOT</version>
+            <version>1.7.0-SNAPSHOT</version>
         </dependency>
-        <!-- h2 数据库驱动 -->
+        <!-- h2 数据库驱动(测试用) -->
        
        <dependency>
             <groupId>com.h2database</groupId>
