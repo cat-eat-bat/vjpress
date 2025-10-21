@@ -125,6 +125,7 @@ export default defineConfig({
           items: [
             { text: "定时器", link: "/guide/misc/timer" },
             { text: "事件管理", link: "/guide/misc/event" },
+            { text: "key store", link: "/guide/misc/keystore" }
           ],
         },
       ],
