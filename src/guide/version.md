@@ -15,7 +15,7 @@ next: '应用Starter | 基础应用'
 | app-javalin-starter    |  javalin 框架starter  | 1.1.0-SNAPSHOT    |
 | sorm                 |  数据库ORM组件       | 1.6.0-SNAPSHOT    |
 | srpc                 |  RPC 通信组件        | 1.1.0-SNAPSHOT    |
-| skv                  |  kv 组件            | 1.2.0             |
+| keystore                  |  kv store 组件            | 1.1.0-SNAPSHOT             |
 | mrc                  |  rest 客户端组件    | 1.1.2-SNAPSHOT    |
 | ring-timer           |  定时器组件(基于时间轮)    | 1.1.0-SNAPSHOT    |
 | event-manager        |  异步事件管理组件   | 1.1.0-SNAPSHOT    |
