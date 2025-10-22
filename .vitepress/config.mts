@@ -115,7 +115,8 @@ export default defineConfig({
           items: [
             { text: "介绍", link: "/guide/slardar/intro" },
             { text: "扩展", link: "/guide/slardar/spi" },
-            { text: "SSO", link: "/guide/slardar/sso" },      
+            { text: "SSO", link: "/guide/slardar/sso" },     
+            { text: "接口防火墙", link: "/guide/slardar/firewall" }, 
             { text: "License", link: "/guide/slardar/license" }
           ],
         },
