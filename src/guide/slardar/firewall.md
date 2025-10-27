@@ -11,9 +11,35 @@ outline: deep
 
 ### 请求 path 黑名单
 
+对配置的path进行拦截返回，支持配置：
+
+```yaml
+slardar:
+  firewall:
+    black-path:
+      enabled: true
+      paths: /api/open/**
+```
+
 ### 请求头参数限制
 
+```yaml
+slardar:
+  firewall:
+    headers:
+      enabled: true
+      forbidden-names: 'X-my,X-time'
+```
+
 ### host 地址限制
+
+```yaml
+slardar:
+  firewall:
+    hosts:
+      enabled: true
+      allowed-hosts: localhost,127.0.0.1
+```
 
 ## 自定义实现
 
