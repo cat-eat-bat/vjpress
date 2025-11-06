@@ -38,7 +38,7 @@ springdoc:
 
 ### 如何添加安全认证
 
-```yaml{3-5}
+```yaml{3-6}
 application:
   openapi:
     basic:
