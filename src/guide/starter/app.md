@@ -186,6 +186,37 @@ public class MyException extends RuntimeException {
 ```
 在service 或controller 中抛出该异常，则会显示注解的内容
 
+## 配置项加密
+
+出于安全考虑，数据库账户密码、其他一些敏感配置信息都应该加密后再加到配置文件中，集成了 `jasypt` 用于实现。
+
+### 生成加密字符串
+
+确定自己使用的加密密钥，然后可以调用提供的 `JasyptUtil` 来生成加密后的字符串
+
+```java
+        String password = "happy-every-day";  // 加密密钥
+        String plaintext = "mysadday";  // 要加密的明文
+
+        String encryptedText = JasyptUtil.encrypt(password, plaintext);
+        System.out.println("加密后: " + encryptedText);
+```
+
+### 设置配置项值和密钥
+
+将加密后的字符串使用 `ENC(加密密文)` 填充到配置文件的对应位置，如:
+
+```yaml
+redis:
+  password: ENC(加密后的Redis密码)
+```
+
+加密密钥不可以直接放到配置文件里，应该通过环境变量或系统属性来设置：
+```shell
+java -Djasypt.encryptor.password=your-secret-password -jar your-application.jar
+```
+
+
 ## 方法调用日志记录
 使用切面实现了任意方法调用的参数、返回值、耗时等的记录，无侵入方式实现，只需要添加注解即可：
 
