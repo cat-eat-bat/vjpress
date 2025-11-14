@@ -68,7 +68,21 @@ application:
       terms-of-service-url: https://stackoverflow.com/
 ```
 
- ### 排除指定接口或包
+### 指定 URL 加上 Authorization 头
+
+```yaml
+application:
+  openapi:
+    info:
+      title: Varok Main Service
+      description: xx数据服务
+      version: 1.2.0
+    auth-paths: '.*/(admin|tp|metric|dash|ui|geocache)/.*'
+```
+
+> 注： 这里的 path 支持java正则表达式
+
+### 排除指定接口或包
 
 排除指定url：
 
